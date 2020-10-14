@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 public class UserDTO {
 
-    private String id;
+    private int id;
 
     private String username;
 
