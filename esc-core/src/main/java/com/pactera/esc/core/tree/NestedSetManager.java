@@ -1,0 +1,96 @@
+/**
+ * LICENSE
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this package in the file MIT.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.opensource.org/licenses/mit-license.html
+ */
+
+package com.pactera.esc.core.tree;
+
+import javax.persistence.EntityManager;
+import java.util.List;
+
+/**
+ * A <tt>NestedSetManager</tt> is used to read and manipulate the nested set
+ * tree structure intrinsic to classes that implement {@link NodeInfo}.
+ */
+public interface NestedSetManager {
+    /**
+     * Clears the NestedSetManager, removing all managed nodes from the
+     * <tt>NestedSetManager</tt>. Any entities wrapped by such nodes are
+     * not detached from the underlying {@link EntityManager}.
+     */
+    // void clear();
+
+    /**
+     * Create a root node for the given NodeInfo instance.
+     *
+     * @param <T>
+     * @param root
+     * @return The created node instance.
+     */
+    <T extends NodeInfo> Node<T> createRoot(T root);
+
+    /**
+     * List all nodes of a tree, in ascending order of {@link NodeInfo#getLeftValue}.
+     *
+     * @param <T>
+     * @param clazz
+     * @return The nodes of the tree.
+     */
+    <T extends NodeInfo> List<Node<T>> listNodes(Class<T> clazz);
+
+    /**
+     * List all nodes of a tree, in ascending order of {@link NodeInfo#getLeftValue}.
+     *
+     * @param <T>
+     * @param clazz
+     * @param rootId The tree ID.
+     * @return The nodes of the tree.
+     */
+    <T extends NodeInfo> List<Node<T>> listNodes(Class<T> clazz, int rootId);
+
+    /**
+     * List all nodes of trees, in ascending order of {@link NodeInfo#getLeftValue}.
+     *
+     * @param <T>
+     * @param clazz
+     * @return The nodes of the trees.
+     */
+    <T extends NodeInfo> List<Node<T>> listTrees(Class<T> clazz);
+
+    /**
+     * List all roots, in ascending order of {@link NodeInfo#getLevel()}.
+     *
+     * @param <T>
+     * @param clazz
+     * @return The nodes of the trees.
+     */
+    <T extends NodeInfo> List<Node<T>> listRoots(Class<T> clazz);
+
+
+    /**
+     * Get the EntityManager used by this NestedSetManager.
+     *
+     * @return The EntityManager.
+     */
+    EntityManager getEntityManager();
+
+    /**
+     * Get the node that represents the given NodeInfo instance in the tree.
+     *
+     * @param <T>
+     * @param nodeInfo
+     * @return The node.
+     */
+    <T extends NodeInfo> Node<T> getNode(T nodeInfo);
+
+    /**
+     * Gets a collection of all nodes currently managed by the NestedSetManager.
+     *
+     * @return The collection of managed nodes.
+     */
+    // Collection<Node<?>> getManagedNodes();
+}

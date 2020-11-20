@@ -1,0 +1,54 @@
+.main {
+    overflow-y: auto;
+    background-color: #ffffff;
+    height: calc(100vh - 120px);
+    position: relative;
+    & > div:nth-child(1) {
+        padding: 16px;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+        font-size: 14px;
+    }
+    .changBg {
+        background: #409eff !important;
+        color: white;
+    }
+    .el-input {
+        width: 200px;
+    }
+    .el-button{
+        width: 100px;
+    }
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 20px;
+        .el-form-item {
+        }
+        // &>>>.el-form-item__error{
+        //     top: 90%!important;
+        //     padding-top: 0px!important
+        // }
+        .address {
+            margin-top: 10px;
+        }
+    }
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+        color: transparent;
+    }
+}
+.material{
+    margin-top: 16px;
+    &>div:nth-child(1){
+        padding: 16px;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        font-size:14px;
+    }
+    &>>>.el-form-item:nth-child(1){
+        margin-left: 50px;
+    }
+}

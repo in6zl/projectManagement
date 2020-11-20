@@ -1,0 +1,67 @@
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: esc
+  name: esc-protal-service-GIT_BRANCH
+spec:
+  ports:
+  - name: app-port
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: esc-protal-service-GIT_BRANCH
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: esc-protal-service-GIT_BRANCH
+  namespace: esc
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: GIT_BRANCH.esc.portal.k8s.pactera.top
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: esc-protal-service-GIT_BRANCH
+          servicePort: app-port
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: esc
+  name: esc-protal-service-GIT_BRANCH
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: esc-protal-service-GIT_BRANCH
+  template:
+    metadata:
+      labels:
+        name: esc-protal-service-GIT_BRANCH
+        app: esc-protal-service-GIT_BRANCH
+    spec:
+      containers:
+      - name: esc-protal-service-GIT_BRANCH
+        image: registry.git.pactera.top/endsupplychain/end-supply-chain/esc-portal:$BUILD_NUMBER
+        ports:
+        - name: app-port
+          containerPort: 80
+          protocol: TCP
+        volumeMounts:
+          - name: tz-config
+            mountPath: /etc/localtime
+        imagePullPolicy: Always
+      volumes:
+      - name: tz-config
+        hostPath:
+           path: /usr/share/zoneinfo/Asia/Shanghai
+      imagePullSecrets:
+      - name: registrykey

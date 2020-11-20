@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="V20200811001__alter_data" author="zmj">
+    <renameColumn tableName="fa_material_require_plan_production_plan" oldColumnName="production_plan_id" newColumnName="production_plan_item_id" columnDataType="varchar(32)"></renameColumn>
+    <dropColumn tableName="fa_production_plan_item" columnName="production_plan_id" ></dropColumn>
+  </changeSet>
+</databaseChangeLog>

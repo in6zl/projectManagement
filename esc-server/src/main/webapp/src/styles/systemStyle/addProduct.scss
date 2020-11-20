@@ -1,0 +1,40 @@
+.main {
+    
+    overflow-y: auto;
+    background-color: #ffffff;
+    & > div:nth-child(1) {
+        padding: 16px;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+        font-size: 14px;
+    }
+    .changBg {
+        background: #409eff !important;
+        color: white;
+    }
+    .el-button{
+        width: 100px;
+    }
+    .searchItem{
+        padding-left: 20px;
+    }
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+        color: transparent;
+    }
+}
+.material{
+    width: 100%;
+    background-color: white;
+    margin-top: 16px;
+    &>div:nth-child(1){
+        padding: 16px;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        font-size:14px;
+    }
+    &>>>.el-form-item:nth-child(1){
+        margin-left: 50px;
+    }
+}

@@ -1,0 +1,78 @@
+.main {
+    width: 100%;
+    background-color: #ffffff;
+    & > div:nth-child(1) {
+        padding: 16px;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+        font-size: 14px;
+    }
+    .changBg {
+        background: #409eff !important;
+        color: white;
+    }
+    form {
+        // margin: 0px 0px 0px 41px;
+        .el-form-item {
+            margin-bottom: 14px;
+        }
+        & >>> .el-form-item__error {
+            top: 90% !important;
+            padding-top: 5px !important;
+        }
+        .address {
+            margin-top: 10px;
+        }
+        & >>> .el-button {
+            width: 132px !important;
+        }
+    }
+    .already {
+        margin: 0 atuo;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 64px;
+        & > img {
+            width: 72px;
+            height: 72px;
+        }
+        & > span:nth-of-type(1) {
+            font-size: 24px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            margin: 24px 0 8px 0;
+        }
+        & > span:nth-of-type(2) {
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.43);
+            margin-bottom: 32px;
+        }
+    }
+}
+.saleOrder >>> .el-dialog__body {
+    padding: 0 20px !important ;
+}
+.addResult {
+    width: 100%;
+    background-color: white;
+    margin-top: 16px;
+    & > div:nth-child(1) {
+        padding: 16px;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+        font-size: 14px;
+    }
+    & >>> .el-autocomplete {
+        width: 100%;
+    }
+}
+
+// @media screen and (max-width: 720px) {
+//     .main {
+//         height: calc(100vh - 80px) !important;
+//     }
+// }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/end-supply-chain.iml" filepath="$PROJECT_DIR$/end-supply-chain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esc-core/esc-core.iml" filepath="$PROJECT_DIR$/esc-core/esc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esc-server/esc-server.iml" filepath="$PROJECT_DIR$/esc-server/esc-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esc-service/esc-service.iml" filepath="$PROJECT_DIR$/esc-service/esc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esc-service/esc-service-sys/esc-service-sys.iml" filepath="$PROJECT_DIR$/esc-service/esc-service-sys/esc-service-sys.iml" />
+    </modules>
+  </component>
+</project>
