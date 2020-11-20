@@ -2,8 +2,8 @@
   <div class="login-container">
     <div class="login-container-right">
       <div class="right-title">
-        <h1>末端供应链管理平台</h1>
-        <h3 style="font-weight:500;color:#C4E6FF;margin-top:-5px">致力于供应商端到工厂端全程可视化的供应链</h3>
+        <h1>工时管理平台</h1>
+        <h3 style="font-weight:500;color:#C4E6FF;margin-top:-5px">工时管理</h3>
       </div>
     </div>
     <el-form

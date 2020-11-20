@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '末端供应链',
+  title: '工时管理系统',
 
   /**
    * @type {boolean} true | false

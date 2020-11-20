@@ -253,7 +253,7 @@ export default {
     size: '布局大小'
   },
   login: {
-    title: '末端供应链管理',
+    title: '工时管理',
     logIn: '登录',
     username: '账号',
     password: '密码',
@@ -454,7 +454,7 @@ export default {
     sidebarLogo: '侧边栏 Logo'
   },
   sidebar: {
-    title: "末端供应链管理"
+    title: "工时管理系统"
   },
   supMana: {
     supplier: {
