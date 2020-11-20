@@ -1,0 +1,109 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.pactera.esc.core.common.ApplicationProperties",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties"
+    },
+    {
+      "name": "application.swagger",
+      "type": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties"
+    },
+    {
+      "name": "application.upload",
+      "type": "com.pactera.esc.core.common.ApplicationProperties$UploadProperties",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.swagger.contact-email",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "yayun.wang2@pactera.com"
+    },
+    {
+      "name": "application.swagger.contact-name",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "王亚运"
+    },
+    {
+      "name": "application.swagger.contact-url",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.default-include-pattern",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "\/api\/.*"
+    },
+    {
+      "name": "application.swagger.description",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "Api"
+    },
+    {
+      "name": "application.swagger.host",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.license",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.license-url",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.protocols",
+      "type": "java.lang.String[]",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.terms-of-service-url",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger"
+    },
+    {
+      "name": "application.swagger.title",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "End-Supply-Chain Api"
+    },
+    {
+      "name": "application.swagger.use-default-response-messages",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": false
+    },
+    {
+      "name": "application.swagger.version",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$Swagger",
+      "defaultValue": "0.0.1"
+    },
+    {
+      "name": "application.upload.file-path",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$UploadProperties"
+    },
+    {
+      "name": "application.upload.path-patterns",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$UploadProperties"
+    },
+    {
+      "name": "application.upload.web-path",
+      "type": "java.lang.String",
+      "sourceType": "com.pactera.esc.core.common.ApplicationProperties$UploadProperties"
+    }
+  ],
+  "hints": []
+}

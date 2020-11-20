@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for end-supply-chain" enabled="true">
+      <profile name="Annotation profile for project-management" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -34,8 +34,10 @@
           <entry name="$MAVEN_REPOSITORY$/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar" />
         </processorPath>
         <module name="esc-core" />
+        <module name="pm-service-sys" />
+        <module name="pm-server" />
         <module name="esc-server" />
-        <module name="esc-service-sys" />
+        <module name="pm-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,7 +45,12 @@
       <module name="esc-core" target="1.8" />
       <module name="esc-server" target="1.8" />
       <module name="esc-service" target="1.8" />
-      <module name="esc-service-sys" target="1.8" />
+      <module name="esc-service-sys" target="1.5" />
+      <module name="pm-core" target="1.8" />
+      <module name="pm-server" target="1.8" />
+      <module name="pm-service" target="1.8" />
+      <module name="pm-service-sys" target="1.8" />
+      <module name="project-management" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

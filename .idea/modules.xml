@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/end-supply-chain.iml" filepath="$PROJECT_DIR$/end-supply-chain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/esc-core/esc-core.iml" filepath="$PROJECT_DIR$/esc-core/esc-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/esc-server/esc-server.iml" filepath="$PROJECT_DIR$/esc-server/esc-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/esc-service/esc-service.iml" filepath="$PROJECT_DIR$/esc-service/esc-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/esc-service/esc-service-sys/esc-service-sys.iml" filepath="$PROJECT_DIR$/esc-service/esc-service-sys/esc-service-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-core/esc-core.iml" filepath="$PROJECT_DIR$/pm-core/esc-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-server/esc-server.iml" filepath="$PROJECT_DIR$/pm-server/esc-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-service/esc-service.iml" filepath="$PROJECT_DIR$/pm-service/esc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-core/pm-core.iml" filepath="$PROJECT_DIR$/pm-core/pm-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-server/pm-server.iml" filepath="$PROJECT_DIR$/pm-server/pm-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-service/pm-service.iml" filepath="$PROJECT_DIR$/pm-service/pm-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pm-service/pm-service-sys/pm-service-sys.iml" filepath="$PROJECT_DIR$/pm-service/pm-service-sys/pm-service-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-management.iml" filepath="$PROJECT_DIR$/project-management.iml" />
     </modules>
   </component>
 </project>

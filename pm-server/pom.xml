@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>project-management</artifactId>
+    <groupId>com.nuist.projectManagement</groupId>
+    <version>V1.0.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>pm-server</artifactId>
+  <packaging>jar</packaging>
+
+  <name>pm-server</name>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.nuist.projectManagement</groupId>
+      <artifactId>pm-service-sys</artifactId>
+      <version>V1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.5.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.45</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <!-- 前端资源目录，即：存放前端包目录-->
+              <directory>src/main/resources/static</directory>
+            </fileset>
+            <fileset>
+              <!-- Vue项目打包自动生成的dist目录 -->
+              <directory>${project.parent.basedir}/src/main/webapp/dist</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy vue ui to static</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <!-- 复制前端打包文件到这里 -->
+              <outputDirectory>${project.build.directory}/classes/static</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <!-- 从前端打包的目录dist进行指定文件、文件夹内容的复制-->
+                  <directory>src/main/webapp/dist</directory>
+                  <includes>
+                    <!-- 具体根据实际前端代码、及目录结构进行配置-->
+                    <include>static/</include>
+                    <include>css/</include>
+                    <include>fonts/</include>
+                    <include>img/</include>
+                    <include>js/</include>
+                    <include>*.js</include>
+                    <include>*.js.map</include>
+                    <include>favicon.ico</include>
+                    <include>index.html</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <mainClass>com.pactera.esc.AdminServerApplication</mainClass>
+          <fork>true</fork>
+        </configuration>
+      </plugin>
+
+      <!--<plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <executions>
+          &lt;!&ndash;<execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>${node.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
+              <downloadRoot>http://npm.taobao.org/mirrors/node/</downloadRoot>
+            </configuration>
+          </execution>&ndash;&gt;
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>generate-resources</phase>
+          </execution>
+          <execution>
+            <id>build prod</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <arguments>run build:prod</arguments>
+              <environmentVariables>
+                <APP_VERSION>${project.version}</APP_VERSION>
+              </environmentVariables>
+              <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <workingDirectory>${project.basedir}/src/main/webapp</workingDirectory>
+          <npmRegistryURL>https://registry.npm.taobao.org</npmRegistryURL>
+        </configuration>
+     </plugin>-->
+    </plugins>
+  </build>
+</project>
