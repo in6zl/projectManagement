@@ -29,25 +29,6 @@
           <el-form-item label="地址" prop="address" size="small">
             <el-input v-model="ruleForm.address" placeholder="输入详细地址" size="small" />
           </el-form-item>
-          <!--      <el-form-item label="用户类型" prop="type" size="small">-->
-          <!--        <el-select v-model="ruleForm.type" placeholder="请选择" @change="getSupplier" style="width:100%">-->
-          <!--          <el-option-->
-          <!--                  v-for="item in types"-->
-          <!--                  :key="item.value"-->
-          <!--                  :label="item.name"-->
-          <!--                  :value="item.value"/>-->
-          <!--        </el-select>-->
-          <!--      </el-form-item>-->
-          <el-form-item label="供应商" prop="supplierId" size="small" v-if="isSupplier">
-            <el-select v-model="ruleForm.supplierId" placeholder="请选择" style="width:100%">
-              <el-option
-                v-for="item in suppliers"
-                :key="item.id"
-                :label="item.name"
-                :value="item.id"
-              />
-            </el-select>
-          </el-form-item>
           <el-form-item label="组织" prop="organizationId" size="small">
             <el-select
               v-model="ruleForm.organizationId"
@@ -93,7 +74,6 @@ import { btn } from "@/components/minxs/button";
 import { createUser } from "@/api/user";
 import { getOrganization } from "@/api/organization";
 import { getRolesByOrg } from "@/api/role";
-import { getSupplier } from "@/api/supplier";
 import submit from "@/components/common/submitBtn";
 import con from "@/components/common/content";
 import lef from "@/components/common/l_icon";
@@ -107,8 +87,6 @@ export default {
   mixins: [btn],
   data() {
     return {
-      isSupplier: false,
-      suppliers: [],
       types: [
         { name: "普通用户", value: 0 },
         { name: "供应商", value: 2 },
@@ -175,12 +153,6 @@ export default {
             trigger: "change",
           },
         ],
-        // type: [
-        //   { required: true, message: "请选择用户类型", trigger: "blur" }
-        // ],
-        supplierId: [
-          { required: true, message: "请选择供应商", trigger: "blur" },
-        ],
         address: [
           {
             min: 3,
@@ -205,19 +177,9 @@ export default {
       this.organizationOps = res.data;
       console.log("组织:" + this.organizationOps);
     });
-    // getSupplier({}).then(res => {
-    //   this.suppliers = res.data;
-    //   console.log('供应商:' + this.organizationOps)
-    // })
   },
   methods: {
-    // getSupplier(value) {
-    //   if (value == 2) {
-    //     this.isSupplier = true;
-    //   } else if (value == 0) {
-    //     this.isSupplier = false;
-    //   }
-    // },
+    
     getRolesByOrg(organizationId) {
       getRolesByOrg(organizationId).then((res) => {
         this.ruleForm.roleIds = [];

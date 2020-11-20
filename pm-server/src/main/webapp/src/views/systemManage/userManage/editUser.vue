@@ -26,24 +26,6 @@
           <el-form-item label="地址" prop="address" size="small">
             <el-input v-model="ruleForm.address" placeholder="输入详细地址" size="small" />
           </el-form-item>
-          <!--      <el-form-item label="用户类型" prop="type" size="small">-->
-          <!--        <el-select v-model="ruleForm.type" placeholder="请选择" style="width:100%" disabled>-->
-          <!--          <el-option-->
-          <!--                  v-for="item in types"-->
-          <!--                  :key="item.value"-->
-          <!--                  :label="item.name"-->
-          <!--                  :value="item.value"/>-->
-          <!--        </el-select>-->
-          <!--      </el-form-item>-->
-          <!--      <el-form-item label="供应商" prop="supplierId" size="small" v-if="ruleForm.type == 2">-->
-          <!--        <el-select v-model="ruleForm.supplierId" placeholder="请选择" style="width:100%">-->
-          <!--          <el-option-->
-          <!--                  v-for="item in suppliers"-->
-          <!--                  :key="item.id"-->
-          <!--                  :label="item.name"-->
-          <!--                  :value="item.id"/>-->
-          <!--        </el-select>-->
-          <!--      </el-form-item>-->
           <el-form-item label="组织" prop="organizationId" size="small" v-if="!isAdmin">
             <el-select v-model="ruleForm.organizationId" placeholder="请选择" @change="getRolesByOrg">
               <el-option
@@ -84,7 +66,6 @@ import { btn } from "@/components/minxs/button";
 import { updateUser, findUser } from "@/api/user";
 import { getOrganization } from "@/api/organization";
 import { getRolesByOrg } from "@/api/role";
-import { getSupplier } from "@/api/supplier";
 import submit from "@/components/common/submitBtn";
 import lef from "@/components/common/l_icon";
 import con from "@/components/common/content";
